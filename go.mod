@@ -1,4 +1,4 @@
-module github.com/go-echarts/statsview
+module github.com/ocean2811/statsview
 
 go 1.15
 
