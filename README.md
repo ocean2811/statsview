@@ -68,9 +68,13 @@ WithMaxPoints(n int)
 // handling the metrics data
 WithTemplate(t string)
 
-// WithAddr sets the listen address
+// WithAddr sets the link address
 // default -> "localhost:18066"
-WithAddr(addr string)
+WithLinkAddr(addr string)
+
+// WithListenAddr sets the listen address
+// default -> "localhost:18066"
+WithListenAddr(addr string)
 
 // WithTimeFormat sets the time format for the line-chart Y-axis label
 // default -> "15:04:05"
@@ -93,7 +97,7 @@ import (
 )
 
 // set configurations before calling the `Start()` method
-viewer.SetConfiguration(viewer.WithTheme(viewer.ThemeWalden), view.WithAddr("localhost:8087"))
+viewer.SetConfiguration(viewer.WithTheme(viewer.ThemeWalden), view.WithListenAddr("localhost:8087"), view.WithLinkAddr("localhost:8087"))
 ```
 
 ## 🗂 Viewers

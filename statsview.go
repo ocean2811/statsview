@@ -77,13 +77,13 @@ func init() {
 func New() *ViewManager {
 	page := components.NewPage()
 	page.PageTitle = "Statsview"
-	page.AssetsHost = fmt.Sprintf("http://%s/debug/statsview/statics/", viewer.Addr())
+	page.AssetsHost = fmt.Sprintf("http://%s/debug/statsview/statics/", viewer.LinkAddr())
 	page.Assets.JSAssets.Add("jquery.min.js")
 
 	mgr := &ViewManager{
 		done: make(chan struct{}),
 		srv: &http.Server{
-			Addr:           viewer.Addr(),
+			Addr:           viewer.ListenAddr(),
 			ReadTimeout:    time.Minute,
 			WriteTimeout:   time.Minute,
 			MaxHeaderBytes: 1 << 20,
